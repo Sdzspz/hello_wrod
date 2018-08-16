@@ -8,7 +8,6 @@ class CitySpiderSpider(scrapy.Spider):
     start_urls = ['https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E5%9F%8E%E5%B8%82%E6%96%B0%E5%88%86%E7%BA%A7%E5%90%8D%E5%8D%95/12702007?fr=aladdin/']
 
     def parse(self, response):
-        
         city_item = CityItem()
         city_list = {}
         city_item['movie_name'] = response.xpath(".//div[@class='para-title level-3']/h3/text()").extract()
